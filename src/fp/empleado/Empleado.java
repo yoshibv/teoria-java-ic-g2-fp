@@ -1,6 +1,8 @@
 package fp.empleado;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import fp.personaInterfaz.Persona;
 
@@ -26,8 +28,38 @@ public class Empleado {
 		
 		return res-res*irpf/100;
 	}
+	
+	public Persona getDatosPersonales() {
+		return datosPersonales;
+	}
+	
+	public Double getIrpf() {
+		return irpf;
+	}
+	
+	public List<Double> getSueldos() {
+		return new ArrayList<Double>(sueldos);
+	}
+	
 	public String formatoCorto() {
 		return this.datosPersonales.getApellidos()+", "+this.datosPersonales.getNombre()+" : "+this.getSueldoNeto();
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(datosPersonales);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Empleado other = (Empleado) obj;
+		return Objects.equals(datosPersonales, other.datosPersonales);
 	}
 	
 	
