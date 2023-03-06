@@ -1,0 +1,5 @@
+dni,nombre,apellidos,fecha nacimiento
+222222222R,John,Doe,12/10/2000
+222222223S,Rafael,Romero,12/10/2002
+222222224T,Julio,Doe,12/10/2002
+222222225V,Pedro,Doe,12/10/2005
