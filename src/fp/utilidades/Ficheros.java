@@ -32,5 +32,12 @@ public class Ficheros {
 		}
 		return l;
 	}
+	public static void escribeFichero(List<String> cadenas, String nombreFichero) {
+		try {
+			Files.write(Paths.get(nombreFichero), cadenas, StandardCharsets.UTF_8);
+		} catch(IOException e) {
+			System.out.println("Error en la escritura del fichero");
+		}
+	}
 
 }

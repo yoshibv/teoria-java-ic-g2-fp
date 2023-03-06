@@ -27,12 +27,21 @@ public class FactoriaEmpleados {
 		
 		return new Empleado(p,irpf,sueldos);	
 	}
-	public static List<Empleado> leerFicheroEmpleados(String nombre) {
+	public static List<Empleado> leerFicheroEmpleados(String nombre, String ficheroErrores) {
 		List<String> aux = Ficheros.leerFichero(nombre, true);
 		List<Empleado> res = new ArrayList<Empleado>();
+		List<String> errores = new ArrayList<String>();
 		for (String s : aux) {
-			res.add(parseaEmpleado(s));
+			Empleado empleado = null;
+			try {
+				empleado = parseaEmpleado(s);
+				res.add(empleado);
+			} catch(Exception e) {
+				e.printStackTrace();
+				errores.add(s);
+			}
 		}
+		Ficheros.escribeFichero(errores, ficheroErrores);
 		return res;
 	}
 	
