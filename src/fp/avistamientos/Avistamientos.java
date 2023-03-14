@@ -10,7 +10,10 @@ public class Avistamientos implements Comparable<Avistamientos> {
 		super();
 		this.avistamientos = avistamientos;
 	}
-
+	
+	public Set<Avistamiento> getAvistamientos() {
+		return this.avistamientos;
+	}
 
 	@Override
 	public int compareTo(Avistamientos o) {

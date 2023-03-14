@@ -10,9 +10,8 @@ public class TestString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String nombre = "Amaia";
-		Integer lon = nombre.length(); // El valor de lon será 5
-		char inicial = nombre.charAt(0); // El valor de inicial será 'A'
-		Character ultima = nombre.charAt(lon - 1); // El valor de ultima será 'a'
+		Integer lon = nombre.length(); // El valor de lon serï¿½ 5
+		char inicial = nombre.charAt(0); // El valor de inicial serï¿½ 'A'
 		System.out.println(nombre);
 		System.out.println(lon);
 		System.out.println(inicial);

@@ -36,8 +36,16 @@ public class Coordenada implements Comparable<Coordenada> {
 		return latitud;
 	}
 
+	public void setLatitud(Double latitud) {
+		this.latitud = latitud;
+	}
+
 	public Double getLongitud() {
 		return longitud;
+	}
+
+	public void setLongitud(Double longitud) {
+		this.longitud = longitud;
 	}
 
 	public Double getDistancia(Coordenada c) {

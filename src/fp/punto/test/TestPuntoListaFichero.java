@@ -14,7 +14,6 @@ public class TestPuntoListaFichero {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<String> lsp = null;
-		Punto p;
 		try {
 			lsp = Files.readAllLines(Path.of("./data/puntos2.csv"));
 		} catch (IOException e) {

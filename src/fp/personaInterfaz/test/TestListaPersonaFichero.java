@@ -13,7 +13,6 @@ public class TestListaPersonaFichero {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Persona p;
 		List<Persona> lp = new ArrayList<Persona>();
 		List<String> ls ;
 		ls = Files.lines(Path.of("./data/personas.txt")).skip(1).toList();

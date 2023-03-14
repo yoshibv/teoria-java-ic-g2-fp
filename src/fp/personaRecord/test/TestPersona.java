@@ -2,7 +2,6 @@ package fp.personaRecord.test;
 
 import java.time.LocalDate;
 
-import fp.personaInterfaz.PersonaImpl;
 import fp.personaRecord.Persona;
 
 public class TestPersona {

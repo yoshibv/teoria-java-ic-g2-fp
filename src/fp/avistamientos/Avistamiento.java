@@ -62,16 +62,24 @@ public class Avistamiento implements Comparable<Avistamiento> {
 		return this.getUbicacion().getDistancia(a.getUbicacion());
 	}
 	
-	public LocalDate getFecha() {
-		return fecha;
-	}
-
 	public String getLugar() {
 		return lugar;
 	}
 
+	public void setLugar(String lugar) {
+		this.lugar = lugar;
+	}
+
 	public Integer getDuracion() {
 		return duracion;
+	}
+
+	public void setDuracion(Integer duracion) {
+		this.duracion = duracion;
+	}
+
+	public LocalDate getFecha() {
+		return fecha;
 	}
 
 	public Forma getForma() {
@@ -80,6 +88,10 @@ public class Avistamiento implements Comparable<Avistamiento> {
 
 	public Coordenada getUbicacion() {
 		return ubicacion;
+	}
+
+	public Integer getAño() {
+		return año;
 	}
 
 	@Override
