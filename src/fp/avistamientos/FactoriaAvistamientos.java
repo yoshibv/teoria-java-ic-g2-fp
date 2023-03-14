@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import fp.coordenada.Coordenadas;
+import fp.coordenada.Coordenada;
 import fp.utilidades.Ficheros;
 
 public class FactoriaAvistamientos {
@@ -17,7 +17,7 @@ public class FactoriaAvistamientos {
 		String lugar = sp[1].trim();
 		Integer duracion = Integer.valueOf(sp[2].trim());
 		Forma forma = Forma.valueOf(sp[3].trim());
-		Coordenadas ubicacion = new Coordenadas(sp[4].trim());
+		Coordenada ubicacion = new Coordenada(sp[4].trim());
 		
 		return new Avistamiento(fecha,lugar,duracion,forma,ubicacion);
 	}

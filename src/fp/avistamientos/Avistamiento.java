@@ -3,7 +3,7 @@ package fp.avistamientos;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import fp.coordenada.Coordenadas;
+import fp.coordenada.Coordenada;
 import fp.utilidades.Checkers;
 
 public class Avistamiento implements Comparable<Avistamiento> {
@@ -11,7 +11,7 @@ public class Avistamiento implements Comparable<Avistamiento> {
 	private String lugar;
 	private Integer duracion;
 	private Forma forma;
-	private Coordenadas ubicacion;
+	private Coordenada ubicacion;
 	private Integer año;
 	
 	public Avistamiento(
@@ -19,8 +19,7 @@ public class Avistamiento implements Comparable<Avistamiento> {
 			String lugar,
 			Integer duracion, 
 			Forma forma,
-			Coordenadas ubicacion, 
-			Integer año) {
+			Coordenada ubicacion) {
 		super();
 		Checkers.check("Duración debe ser positiva", duracion>0);
 		this.fecha = fecha;
@@ -28,14 +27,14 @@ public class Avistamiento implements Comparable<Avistamiento> {
 		this.duracion = duracion;
 		this.forma = forma;
 		this.ubicacion = ubicacion;
-		this.año = año;
+		this.año = fecha.getYear();
 	}
 	
 	public Avistamiento(
 			String lugar,
 			Integer duracion, 
 			Forma forma,
-			Coordenadas ubicacion, 
+			Coordenada ubicacion, 
 			Integer año) {
 		super();
 		Checkers.check("Duración debe ser positiva", duracion>0);
