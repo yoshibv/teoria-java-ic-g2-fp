@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import fp.coordenadas.Coordenadas;
+import fp.coordenada.Coordenadas;
 import fp.utilidades.Ficheros;
 
 public class FactoriaAvistamientos {

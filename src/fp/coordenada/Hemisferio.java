@@ -1,4 +1,4 @@
-package fp.coordenadas;
+package fp.coordenada;
 
 public enum Hemisferio {
 	NORTE, SUR;

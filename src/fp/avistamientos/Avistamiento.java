@@ -3,7 +3,7 @@ package fp.avistamientos;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import fp.coordenadas.Coordenadas;
+import fp.coordenada.Coordenadas;
 import fp.utilidades.Checkers;
 
 public class Avistamiento implements Comparable<Avistamiento> {
