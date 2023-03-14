@@ -58,8 +58,8 @@ public class Avistamiento implements Comparable<Avistamiento> {
 		this.año = this.fecha.getYear();
 	}
 	
-	public Double getDistancia(Avistamiento a1, Avistamiento a2) {
-		return a1.getUbicacion().getDistancia(a2.getUbicacion());
+	public Double getDistancia(Avistamiento a) {
+		return this.getUbicacion().getDistancia(a.getUbicacion());
 	}
 	
 	public LocalDate getFecha() {
