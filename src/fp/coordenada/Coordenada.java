@@ -40,15 +40,15 @@ public class Coordenada implements Comparable<Coordenada> {
 		return longitud;
 	}
 
-	public Double getDistancia(Coordenada c1, Coordenada c2) {
+	public Double getDistancia(Coordenada c) {
 		final double R = 6371; // Radio de la Tierra en km
-	    double dLat = Math.toRadians(c2.getLatitud() - c1.getLatitud());
-	    double dLon = Math.toRadians(c2.getLongitud() - c1.getLongitud());
+	    double dLat = Math.toRadians(c.getLatitud() - this.getLatitud());
+	    double dLon = Math.toRadians(c.getLongitud() - this.getLongitud());
 	    double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
-	            + Math.cos(Math.toRadians(c1.getLatitud())) * Math.cos(Math.toRadians(c2.getLatitud()))
+	            + Math.cos(Math.toRadians(this.getLatitud())) * Math.cos(Math.toRadians(c.getLatitud()))
 	            * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-	    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-	    double distance = R * c;
+	    double coord = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+	    double distance = R * coord;
 	    return distance;
 	}
 	

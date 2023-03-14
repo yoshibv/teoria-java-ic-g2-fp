@@ -1,6 +1,7 @@
 package fp.avistamientos;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import fp.coordenada.Coordenada;
@@ -43,7 +44,42 @@ public class Avistamiento implements Comparable<Avistamiento> {
 		this.duracion = duracion;
 		this.forma = forma;
 		this.ubicacion = ubicacion;
-		this.año = año;
+		this.año = this.fecha.getYear();
+	}
+	
+	public Avistamiento(String s) {
+		super();
+		String[] a = s.split(";");
+		this.fecha = LocalDate.parse(a[0].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		this.lugar = a[1].trim();
+		this.duracion = Integer.decode(a[2].trim());
+		this.forma = Forma.valueOf(a[3].trim());
+		this.ubicacion = new Coordenada(a[4].trim());
+		this.año = this.fecha.getYear();
+	}
+	
+	public Double getDistancia(Avistamiento a1, Avistamiento a2) {
+		return a1.getUbicacion().getDistancia(a2.getUbicacion());
+	}
+	
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public String getLugar() {
+		return lugar;
+	}
+
+	public Integer getDuracion() {
+		return duracion;
+	}
+
+	public Forma getForma() {
+		return forma;
+	}
+
+	public Coordenada getUbicacion() {
+		return ubicacion;
 	}
 
 	@Override
@@ -70,5 +106,11 @@ public class Avistamiento implements Comparable<Avistamiento> {
 			res = this.fecha.compareTo(a.fecha);
 		}
 		return res;
+	}
+
+	@Override
+	public String toString() {
+		return "Avistamiento [fecha=" + fecha + ", lugar=" + lugar + ", duracion=" + duracion + ", forma=" + forma
+				+ ", ubicacion=" + ubicacion + ", año=" + año + "]";
 	}
 }
